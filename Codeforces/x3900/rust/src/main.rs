@@ -18,7 +18,7 @@ fn getint() -> i64 {
 
 }
 
-
+//Implements greedy algorithm, acc is the accumulator
 fn find_min_cost(n : i64, k: i64, a : i64, b : i64, acc: i64) ->  i64 {
     if n == 1 {
         return acc;
