@@ -37,9 +37,9 @@ fn get_ints() -> Vec<i32> {
     io::stdin().read_line( &mut input_text )
                .expect( "could not read line" );
     let numbers : Vec<i32> = input_text.trim()
-                                           .split_whitespace()
-                                           .map(|x| x.parse::<i32>().unwrap())
-                                           .collect();
+                                       .split_whitespace()
+                                       .map(|x| x.parse::<i32>().unwrap())
+                                       .collect();
 
     numbers
 }
