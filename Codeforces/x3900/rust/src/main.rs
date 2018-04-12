@@ -20,19 +20,15 @@ fn getint() -> i64 {
 
 //Implements greedy algorithm, acc is the accumulator
 fn find_min_cost(n : i64, k: i64, a : i64, b : i64, acc: i64) ->  i64 {
-    if n == 1 {
-        return acc;
-    }
-
     let rem = n%k;
 
-    if rem != 0 {
+    if rem != 0 && n > k {
         return find_min_cost(n - rem, k, a, b, acc+ a*rem);
     }
 
     let quo = n/k;
 
-    if quo*a + b < n*a {
+    if quo > 0 && quo*a + b < n*a {
         return find_min_cost(quo, k, a, b, acc+ b);
     }
 
